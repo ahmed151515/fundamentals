@@ -184,6 +184,18 @@ void d(int i)
 }
 int main()
 {
+/*
+          A          H          H          M         M          EEEEEEEEEEE  DDDDDDD          
+         A A         H          H         M M       M M         E            D      D         
+        A   A        H          H        M   M     M   M        E            D       D        
+       A     A       H          H       M     M   M     M       E            D        D       
+      A       A      H          H      M       M M       M      E            D         D      
+     AAAAAAAAAAA     HHHHHHHHHHHH     M         M         M     EEEEEEEEEEE  D         D     
+    A           A    H          H    M                     M    E            D         D    
+   A             A   H          H   M                       M   E            D        D   
+  A               A  H          H  M                         M  E            D       D  
+ A                 A H          H M                           M EEEEEEEEEEE  DDDDDDDD 
+*/
   for (int i = 0; i < 10; i++)
   {
     // A
