@@ -33,6 +33,16 @@ int main()
   //   x *= y;
   // }
   // cout << "x = " << x << "\n";
+  //=========================
+  // chat gpt  
+  // int x, l;
+  // cin >> x >> l;
+  // int result = x;
+  // for (int i = 1; i < l; i++)
+  // {cout<<i;
+  //   result *= x;
+  // }
+  // cout << "x = " << result << "\n";
   //===================================================
   // char c ;
   // // cin>>c;

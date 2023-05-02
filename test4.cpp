@@ -1,7 +1,10 @@
 #include <iostream>
 using namespace std;
-void a(int i)
+int main()
 {
+    for (int i = 0; i < 10; i++)
+  {
+    // A
   for (int j = 10; j > i; j--)
   {
     cout << " ";
@@ -28,9 +31,12 @@ void a(int i)
     if (i != 0)
       cout << "A";
   }
-}
-void h(int i)
-{
+
+    // ----
+
+    for (int j = 10; j > i; j--)
+      cout << " ";
+      // H
   if (i == 5)
     for (int j = 0; j < 12; j++)
       cout << "H";
@@ -49,9 +55,12 @@ void h(int i)
       cout << "H";
     }
   }
-}
-void m(int i)
-{
+
+
+    // ----
+    // M
+
+    
   for (int j = 10; j > i; j--)
   {
 
@@ -123,9 +132,12 @@ void m(int i)
       continue;
     cout << "M";
   }
-}
-void e(int i)
-{
+    // ----
+
+    for (int j = 10; j > i; j--)
+      cout << " ";
+
+    // E
   for (int j = 0; j < 1; j++)
   {
     cout << "E";
@@ -135,9 +147,20 @@ void e(int i)
     for (int j = 0; j < 10; j++)
       cout << "E";
   }
-}
-void d(int i)
-{
+
+    // ----
+
+    if (i == 0 || i == 5 || i == 9)
+    {
+      for (int j = 0; j < 1; j++)
+        cout << "  ";
+    }
+    else
+      for (int j = 0; j < 6; j++)
+      {
+        cout << "  ";
+      }
+      // D
   int x = 1, y = 1;
 
   if (i == 0 || i == 9)
@@ -181,76 +204,72 @@ void d(int i)
     if (i > 5 && !(i == 10))
       cout << "D";
   }
-}
-int main()
-{
-  for (int i = 0; i < 10; i++)
+
+    // ----
+
+    cout << "\n";
+  }
+cout<<"\nfigure 1\n~~~~~~~~~~~~~~\n";
+/*
+DDDDDDD
+D      D
+D       D
+D        D
+D         D
+D         D
+D         D
+D        D
+D       D
+D      D
+DDDDDDD
+  */
+int x=1,y=1;
+  for (int i = 0; i < 11; i++)
   {
-    // A
-    a(i);
-
-    // ----
-
-    for (int j = 10; j > i; j--)
-      cout << " ";
-    // H
-    h(i);
-
-    // ----
-    // M
-
-    m(i);
-
-    // ----
-
-    for (int j = 10; j > i; j--)
-      cout << " ";
-
-    // E
-    e(i);
-
-    // ----
-
-    if (i == 0 || i == 5 || i == 9)
-    {
-      for (int j = 0; j < 1; j++)
-        cout << "  ";
-    }
+    if (i == 0 || i == 10)
+      for (int j = 0; j < 7; j++)
+        cout << "D";
     else
-      for (int j = 0; j < 6; j++)
+    for (int j = 0; j < 1; j++)
+      cout << "D";
+    for (int j = 0; j < i+x; j++)
+    {
+      if (i < 5&&!(i==0))
+        cout << " ";
+        if(x<5)
+        x++;
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      if (i < 5&&!(i==0))
+        cout << "D";
+    }
+    if (i == 5)
+    {
+      for (int j = 0; j < 9; j++)
       {
-        cout << "  ";
+        cout << " ";
       }
-    // D
-    d(i);
-
-    // ----
-    for (int j = 10; j > i; j--)
-      cout << " ";
+      for (int j = 0; j < 1; j++)
+      {
+        cout << "D";
+      }
+    }
+    for (int j = 10; j > i-y; j--)
+    {
+      if (i > 5 && !(i==10))
+        cout << " ";
+        if(y<5)
+        y++;
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      if (i > 5&&!(i==10))
+        cout << "D";
+    }
     cout << "\n";
   }
-
-  cout << "\nfigure 1\n~~~~~~~~~~~~~~\n";
-  /*
-  DDDDDDD
-  D      D
-  D       D
-  D        D
-  D         D
-  D         D
-  D         D
-  D        D
-  D       D
-  D      D
-  DDDDDDD
-    */
-  for (int i = 0; i < 10; i++)
-  {
-    d(i);
-
-    cout << "\n";
-  }
-  cout << "\nfigure 2\n~~~~~~~~~~~~~~\n";
+cout<<"\nfigure 2\n~~~~~~~~~~~~~~\n";
 
   /*
 EEEEEEEEEEE
@@ -266,11 +285,19 @@ EEEEEEEEEEE
   */
   for (int i = 0; i < 10; i++)
   {
-    e(i);
 
+    for (int j = 0; j < 1; j++)
+    {
+      cout << "E";
+    }
+    if (i == 0 || i == 5 || i == 9)
+    {
+      for (int j = 0; j < 10; j++)
+        cout << "E";
+    }
     cout << "\n";
   }
-  cout << "\nfigure 3\n~~~~~~~~~~~~~~\n";
+cout<<"\nfigure 3\n~~~~~~~~~~~~~~\n";
 
   /*
           M         M
@@ -287,11 +314,80 @@ EEEEEEEEEEE
   */
   for (int i = 0; i < 10; i++)
   {
+    for (int j = 10; j > i; j--)
+    {
 
-    m(i);
+      cout << " ";
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      cout << "M";
+    }
+    for (int j = 0; j < i; j++)
+    {
+      if(j>=5)
+      break;
+      if (j == i - 1)
+        cout << " ";
+      else
+        cout << "  ";
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      if (i == 0)
+        continue;
+      if (i > 5)
+        break;
+      cout << "M";
+    }
+    // -----------------
+    for (int j = 5; j > i; j--)
+    {
+      if (i > 5)
+        break;
+      if (j == i + 1)
+        cout << " ";
+      else
+        cout << "  ";
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      if (i == 5)
+        continue;
+      if (i > 5)
+        break;
+      cout << "M";
+    }
+    // ---
+    for (int j = 0; j < i; j++)
+    {
+      if (i > 5)
+        break;
+
+      if (j == i - 1)
+        cout << " ";
+      else
+        cout << "  ";
+    }
+    for (int j = 0; j < i; j++)
+    {
+      if (i <= 5)
+        break;
+      if (j == i - 1)
+        cout << " ";
+        // continue;
+      else
+        cout << "  ";
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      if (i == 0)
+        continue;
+      cout << "M";
+    }
     cout << "\n";
   }
-  cout << "\nfigure 4\n~~~~~~~~~~~~~~\n";
+cout<<"\nfigure 4\n~~~~~~~~~~~~~~\n";
 
   /*
 H          H
@@ -308,12 +404,29 @@ H          H
   */
   for (int i = 0; i < 11; i++)
   {
-
-    h(i);
+    if (i == 5)
+      for (int j = 0; j < 12; j++)
+        cout << "H";
+    else
+    {
+      for (int j = 0; j < 1; j++)
+      {
+        cout << "H";
+      }
+      for (int j = 0; j < 10; j++)
+      {
+        cout << " ";
+      }
+      for (int j = 0; j < 1; j++)
+      {
+        cout << "H";
+      }
+    }
     cout << "\n";
   }
-  cout << "\nfigure 5\n~~~~~~~~~~~~~~\n";
+cout<<"\nfigure 5\n~~~~~~~~~~~~~~\n";
 
+  
   /*
           A
          A A
@@ -328,11 +441,36 @@ H          H
   */
   for (int i = 0; i < 10; i++)
   {
-
-    a(i);
+    for (int j = 10; j > i; j--)
+    {
+      cout << " ";
+    }
+    for (int j = 0; j < 1; j++)
+    {
+      cout << "A";
+    }
+    if (i == 5)
+      for (int j = 0; j < i + 4; j++)
+      {
+        cout << "A";
+      }
+    else
+      for (int j = 0; j < i; j++)
+      {
+        if(j==i-1)
+        cout << " ";
+      else
+        cout << "  ";
+      }
+    for (int j = 0; j < 1; j++)
+    {
+      if (i != 0)
+        cout << "A";
+    }
     cout << "\n";
   }
-  cout << "\nfigure 6\n~~~~~~~~~~~~~~\n";
+cout<<"\nfigure 6\n~~~~~~~~~~~~~~\n";
+
 
   /*
 X         X
@@ -445,7 +583,8 @@ X         X
     }
     cout << "\n";
   }
-  cout << "\nfigure 7\n~~~~~~~~~~~~~~\n";
+cout<<"\nfigure 7\n~~~~~~~~~~~~~~\n";
+
 
   /*
   2
@@ -455,14 +594,14 @@ X         X
   */
   for (int i = 2; i < 11; i += 2)
   {
-    for (int j = 2; j < i; j += 2)
-    {
-
-      cout << j << " ";
-    }
-    cout << "\n";
+  for (int j = 2; j < i; j += 2)
+  {
+  
+  cout << j << " ";
   }
-  cout << "\nfigure 8\n~~~~~~~~~~~~~~\n";
+  cout << "\n";
+  }
+cout<<"\nfigure 8\n~~~~~~~~~~~~~~\n";
 
   /*
 -       *
@@ -502,40 +641,5 @@ X         X
   }
   for (int j = 0; j < 8; j++)
     cout << "* ";
-  cout << "\nfigure 9\n~~~~~~~~~~~~~~\n";
-/*
-          *
-         ***
-        *****
-       *******
-      *********
-     ***********
-    *************
-   ***************
-  *****************
- *******************
-*/
-  for (int i = 0; i < 10; i++)
-  {
-    for (int j = 10; j > i; j--)
-    {
-      cout << " ";
-    }
-    if (i == 0)
-      cout << "*";
-    else
-      for (int j = 0; j < i; j++)
-      {
-        if(j==i-1)
-        cout << "***";
-      else
-        cout << "**";
-      }
 
-    cout << "\n";
-  }
-
-  cout << "\nfigure 10\n~~~~~~~~~~~~~~\n";
-
-  return 0;
 }
