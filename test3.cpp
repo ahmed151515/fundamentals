@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 void a(int i)
 {
@@ -228,6 +229,8 @@ int main()
     for (int j = 10; j > i; j--)
       cout << " ";
     cout << "\n";
+ Sleep(500); 
+
   }
 
   cout << "\nfigure 1\n~~~~~~~~~~~~~~\n";
@@ -249,6 +252,8 @@ int main()
     d(i);
 
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 2\n~~~~~~~~~~~~~~\n";
 
@@ -269,6 +274,8 @@ EEEEEEEEEEE
     e(i);
 
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 3\n~~~~~~~~~~~~~~\n";
 
@@ -290,6 +297,8 @@ EEEEEEEEEEE
 
     m(i);
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 4\n~~~~~~~~~~~~~~\n";
 
@@ -311,6 +320,8 @@ H          H
 
     h(i);
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 5\n~~~~~~~~~~~~~~\n";
 
@@ -331,6 +342,8 @@ H          H
 
     a(i);
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 6\n~~~~~~~~~~~~~~\n";
 
@@ -444,6 +457,8 @@ X         X
       // cout<<"X";
     }
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 7\n~~~~~~~~~~~~~~\n";
 
@@ -461,6 +476,8 @@ X         X
       cout << j << " ";
     }
     cout << "\n";
+     Sleep(500); 
+
   }
   cout << "\nfigure 8\n~~~~~~~~~~~~~~\n";
 
@@ -499,6 +516,8 @@ X         X
       cout << "*";
     }
     cout << "\n";
+     Sleep(500); 
+
   }
   for (int j = 0; j < 8; j++)
     cout << "* ";
@@ -533,6 +552,8 @@ X         X
       }
 
     cout << "\n";
+     Sleep(500); 
+
   }
 
   cout << "\nfigure 10\n~~~~~~~~~~~~~~\n";

@@ -531,7 +531,7 @@ X         X
   {
     for (int j = 10; j > i; j--)
     {
-      cout << " ";
+      cout << "-";
     }
     if (i == 0)
       cout << "*";
