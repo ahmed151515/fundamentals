@@ -46,6 +46,15 @@
         "iomanip": "cpp",
         "array": "cpp",
         "string": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "algorithm": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp",
+        "fstream": "cpp",
+        "locale": "cpp",
+        "regex": "cpp",
+        "sstream": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp"
     }
 }
