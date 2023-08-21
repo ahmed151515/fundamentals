@@ -35,3 +35,22 @@
 #   print(b)
 #   print("--")
 
+#  switch or (match) statement
+# i = 66
+# match i:
+    
+#     case 5:
+#         pass
+#     case 4:
+#         pass
+#     case 6:
+#         pass
+#     case 2:
+#         pass
+#     case default:
+#         pass
+
+
+
+
+

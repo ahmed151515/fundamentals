@@ -1,19 +1,39 @@
 #include <iostream>
-#include <array>
 #include <string>
-#include <iomanip>
-#include <cmath>
-#include <cctype>
-#include <algorithm>
+#include <array>
 #include <vector>
-#include <fstream>
-#include <compare>
-#include <regex>
-#include <typeinfo>  // typeid(value).name()
 using namespace std;
+struct f
+{
+    int x;
+    string l;
+    f (int x, string l):x(x), l(l)
+    {}
 
+    void print()
+    {
+        cout<< x<<endl;
+        cout<< l<<endl;
+    }
+
+};
+struct fv : public f
+{
+    fv(int x, string l) :f(x,l)   
+      {}
+};
 int main()
 {
-  cout<<((3*3)+(5*5)==9*9);
-  return 0;
+    // int x[] = {1,2,3,5,45,11,65,4,5,64,6};
+    // for (int * i = x;; i++)
+    // {
+    //     cout << *i << endl;
+    //     if (i == &x[size(x)-1])
+    //     {
+    //         break;
+    //     }
+    // }
+    fv x(5,"cd");
+    x.print();
+    return 0;
 }
