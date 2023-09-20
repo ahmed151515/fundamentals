@@ -2,5 +2,5 @@
 
 int main()
 {
-
+    array<int, 0>x;
 }
