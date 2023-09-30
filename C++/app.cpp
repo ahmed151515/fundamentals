@@ -2,5 +2,10 @@
 
 int main()
 {
-    array<int, 0>x;
+    const int i = 0;
+
+    for (; i < 10; i++)
+    {
+        
+    }
 }

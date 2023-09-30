@@ -1,12 +1,26 @@
-// Online C compiler to run C program online
+#include <stddef.h>
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
+#include <stdarg.h>
+int pow(int n)
+{
+        int num = 1;
 
-int main() {
-    int len;
-    len = printf("%d\n",NULL);
+        if (n == 0)
+        {
+                return (1);
+        }
+        while (n--)
+        {
+                num *= 2;
+        }
+        return (num);
+}
+int main(void)
+{
 
-    printf("%d\n", len);
+        unsigned long int n = 9040000000;
 
-    return 0;
+        printf("%d", sizeof(n) * 8);
+        return (0);
 }
