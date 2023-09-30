@@ -519,6 +519,20 @@ public:
     {
         return size;
     }
+    t get_item(int p)
+    {
+        node *item = front;
+        if (p < 0 || p > size)
+        {
+            return 0;
+        }
+        while (p--)
+        {
+            item  = item->next;
+        }
+
+        return item->item;
+    }
 
     void print()
     {
@@ -535,12 +549,6 @@ public:
 
 int main()
 {
-    doubly_linked_list<int> x;
-
-    for (int i = 1; i <= 100; i++)
-    {
-        x.push_back(i * 10);
-    }
 
     return 0;
 }
