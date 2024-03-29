@@ -23,7 +23,6 @@ public:
     linked_list() : size(0), front(NULL), back(NULL) {}
     ~linked_list()
     {
-
         clear();
     }
     bool IsEmpty()
@@ -291,7 +290,7 @@ public:
         }
     }
 };
-
+// ---------------------------------------------------------------------------------------------
 template <class t>
 class doubly_linked_list
 {
@@ -528,7 +527,7 @@ public:
         }
         while (p--)
         {
-            item  = item->next;
+            item = item->next;
         }
 
         return item->item;

@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"*.cs": "csharp",
+		"array": "cpp",
+		"string_view": "cpp",
+		"initializer_list": "cpp"
+	}
+}
