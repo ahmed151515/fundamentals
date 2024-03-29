@@ -38,23 +38,52 @@ int binary_search(int arr[], int size, int targt)
     return search(arr, 0, size - 1, targt);
 }
 
+int binary_search_while(int arr[], int size, int targt)
+{
+    int mid, low = 0, high = size - 1;
+    while (low <= high)
+    {
+        mid = low + (high - low) / 2;
+        if (arr[mid] == targt)
+        {
+            return mid;
+        }
+        else if (arr[mid] < targt)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
 int main()
 {
-    /*Exception has occurred.
-Segmentation fault*/
+
 
     const int size = 100000;
     int a[size];
     for (int i = 0; i < size; i++)
     {
+        if (i == 100)
+        {
+            continue;
+        }
         a[i] = i;
     }
     time_t s = time(NULL);
-    cout << linear_search(a, size, size - 1) << "\n";
+    cout << linear_search(a, size, 101) << "\n";
     time_t e = time(NULL);
     cout << "time is " << (e - s) << "\n";
     s = time(NULL);
-    cout << binary_search(a, size, size - 1) << "\n";
+    cout << binary_search(a, size, 101) << "\n";
+    e = time(NULL);
+    cout << "time is " << (e - s) << "\n";
+    s = time(NULL);
+    cout << binary_search_while(a, size, 888880) << "\n";
     e = time(NULL);
     cout << "time is " << (e - s) << "\n";
     return 0;
