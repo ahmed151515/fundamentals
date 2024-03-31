@@ -1,38 +1,33 @@
 #include "main.h"
-// /**
-//  * fibonacci - Calculation of the Fibonacci number
-//  * @num: number
-//  * formula = f(n) = f(n - 1) + f(n - 2)
-//  * I use Concept Recursion
-//  * Return: Fibonacci number
-//  */
-// int fibonacci(int num)
-// {
-//     if (num == 1)
-//     {
-//         return 1;
-//     }
-//     if (num == 0)
-//     {
-//         return 0;
-//     }
-//     return fibonacci(num - 1) + fibonacci(num - 2);
-// }
-
-// int f(int x)
-// {
-//     if(x == 1)
-//     {
-// return 1;
-//     }
-//     if (x==0)
-//     {
-//                 return 0;
-//     }
-
-//     return f    (   x -     1)  +   f(x  -  2   );
-// }
 
 int main()
 {
+    fstream file;
+
+    file.open("file_struct.txt", ios::out);
+
+    // file << "hello my name ahmed";
+    // file.seekg(5);
+    // file.seekp(0);
+    // file <<"arafa";
+    // file.close();
+
+    // file << "hello my name ahmed";
+    // file.seekp(5,ios::end);
+    // file <<"arafa";
+    // file.close();
+
+    // file << "hello my name ahmed";
+    // file.seekp(5, ios::beg);
+    // file << " world, ";
+    // file.seekp(2);
+    // file << " gold ";
+    // file.seekp(-2);
+    // file << "hi";
+    // file.close();
+
+    // file << "hello my name ahmed";
+    // int a;
+    // cin>>a;
+    // file.close();
 }
