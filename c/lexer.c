@@ -1,44 +1,63 @@
 #include "compiler.h"
 
-/**
- *lexer - A Lexer Function For Our C Compiler
- *@file: Source File
- *Return: Returns The Token To Be Used Next By The Parser
- */
-Token lexer(FILE *file)
+// Token tokens[MAX_SIZE];
+// int TokenCount = 0;
+// int TokenIndex = 0;
+
+void add_token(TokenType type, const char *val)
 {
+    if (TokenCount >= MAX_SIZE)
+    {
+        perror("ERROR: Too Many Tokens!");
+        exit(1);
+    }
+
+    tokens[TokenCount].type = type;
+    tokens[TokenCount].value = strdup(val);
+    TokenCount++;
+}
+
+/**
+ * lexer - A Funtion That Takes The Source File And Tokenize It's Contents.
+ * @file: The Source FIle
+ */
+void lexer(FILE *file)
+{
+
     char word[256];
+    // int column = 0;
+    // int line = 1;
     int ch;
-    int i = 0;
+    int i;
     Token token;
 
-    token.value = NULL;
     if (file == NULL)
     {
         perror("File Doesn't Exist");
-        token.type = UNKNOWN;
-        return (token);
+        token.type = TOKEN_UNKNOWN;
+        add_token(TOKEN_UNKNOWN, "NULL");
     }
 
     while ((ch = fgetc(file)) != EOF)
     {
+        i = 0;
         switch (ch)
         {
         case ';':
-            token.type = TOKEN_SEMICOLON;
-            return (token);
+            add_token(TOKEN_SEMICOLON, ";");
+            break;
         case '(':
-            token.type = TOKEN_OPEN_PAREN;
-            return (token);
+            add_token(TOKEN_OPEN_PAREN, "(");
+            break;
         case ')':
-            token.type = TOKEN_CLOSE_PAREN;
-            return (token);
+            add_token(TOKEN_CLOSE_PAREN, ")");
+            break;
         case '{':
-            token.type = TOKEN_OPEN_CURLY_PAREN;
-            return (token);
+            add_token(TOKEN_OPEN_CURLY_PAREN, "{");
+            break;
         case '}':
-            token.type = TOKEN_CLOSE_CURLY_PAREN;
-            return (token);
+            add_token(TOKEN_CLOSE_CURLY_PAREN, "}");
+            break;
         default:
             if (isalpha(ch))
             {
@@ -53,20 +72,16 @@ Token lexer(FILE *file)
                 word[i] = '\0';
                 if (strcmp(word, "return") == 0)
                 {
-                    token.type = TOKEN_RETURN;
+                    add_token(TOKEN_RETURN, word);
                 }
                 else if (strcmp(word, "int") == 0)
                 {
-                    token.type = TOKEN_INT;
+                    add_token(TOKEN_INT, word);
                 }
                 else
                 {
-                    token.type = TOKEN_UNKNOWN;
+                    add_token(TOKEN_IDENTIFIER, word);
                 }
-
-                token.value = strdup(word);
-
-                return (token);
             }
             else if (isdigit(ch))
             {
@@ -79,10 +94,9 @@ Token lexer(FILE *file)
 
                 ungetc(ch, file);
                 word[i] = '\0';
-                token.type = TOKEN_LITERAL_INT;
-                token.value = strdup(word);
+                add_token(TOKEN_LITERAL_INT, word);
 
-                return (token);
+                // return (token);
             }
             else if (isspace(ch))
             {
@@ -90,20 +104,12 @@ Token lexer(FILE *file)
             }
             else
             {
-                token.type = TOKEN_UNKNOWN;
+                add_token(TOKEN_UNKNOWN, "");
 
-                return (token);
+                // return (token);
             }
+
+            break;
         }
     }
-
-    if (ch == EOF)
-    {
-        token.type = UNKNOWN;
-        return (token);
-    }
-
-    token.type = TOKEN_UNKNOWN;
-
-    return (token);
 }

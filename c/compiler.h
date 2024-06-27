@@ -5,29 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-typedef enum
-{
-    SemiColon,
-    OPEN_PAREN,
-    CLOSE_PAREN,
-    OPEN_CURLY_PAREN,
-    CLOSE_CURLY_PAREN,
-    UNKNOWN,
-} Seperators;
+#define MAX_SIZE 1024
 
 typedef enum
 {
-    RETURN,
-    INT,
-} Keywords;
-
-typedef enum
-{
-    LITERAL_INT,
-} Literals;
-
-typedef enum
-{
+    ROOT,
     TOKEN_SEMICOLON,
     TOKEN_OPEN_PAREN,
     TOKEN_CLOSE_PAREN,
@@ -36,7 +18,12 @@ typedef enum
     TOKEN_RETURN,
     TOKEN_INT,
     TOKEN_LITERAL_INT,
+    TOKEN_IDENTIFIER,
     TOKEN_UNKNOWN,
+    /*ADD TokenType FOR CHILD NODE*/
+    EXIT,
+    DECLARATION,
+
 } TokenType;
 
 typedef struct
@@ -45,6 +32,28 @@ typedef struct
     char *value;
 } Token;
 
-Token lexer(FILE *file);
+typedef struct TokenNode
+{
+    Token token;
+    struct TokenNode *next;
+} TokenNode;
+typedef struct ExpressionNode
+{
+    Token token;
+    struct ExpressionNode *child;
+    TokenNode *next;
+} ExpressionNode;
 
+extern Token tokens[MAX_SIZE];
+extern int TokenCount;
+extern int TokenIndex;
+extern ExpressionNode *root;
+
+void lexer(FILE *file);
+void parse_return();
+void parse_main();
+void parser();
+void add_token(TokenType type, const char *val);
+ExpressionNode *create_expression_node(Token token, ExpressionNode *root);
+TokenNode *create_token_node(Token token, TokenNode *prev);
 #endif
