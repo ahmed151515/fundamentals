@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.cs": "csharp",
+    "iosfwd": "cpp",
+    "new": "cpp",
+    "ostream": "cpp",
+    "*.tcc": "cpp",
+    "fstream": "cpp"
+  }
+}

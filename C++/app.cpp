@@ -1,33 +1,39 @@
-#include "main.h"
+#include <fstream>
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class f
+{
+    string name;
+    int age;
+
+public:
+    f(string n, int a)
+    {
+        name = n;
+        age = a;
+    }
+
+    void print()
+    {
+        cout << name << " | " << age << "\n";
+    }
+};
 
 int main()
 {
-    fstream file;
+    vector<f> g;
 
-    file.open("file_struct.txt", ios::out);
+    for (int i = 0; i < 5; i++)
+    {
+        f c = f("ahmed", i);
 
-    // file << "hello my name ahmed";
-    // file.seekg(5);
-    // file.seekp(0);
-    // file <<"arafa";
-    // file.close();
+        g.push_back(c);
+    }
 
-    // file << "hello my name ahmed";
-    // file.seekp(5,ios::end);
-    // file <<"arafa";
-    // file.close();
-
-    // file << "hello my name ahmed";
-    // file.seekp(5, ios::beg);
-    // file << " world, ";
-    // file.seekp(2);
-    // file << " gold ";
-    // file.seekp(-2);
-    // file << "hi";
-    // file.close();
-
-    // file << "hello my name ahmed";
-    // int a;
-    // cin>>a;
-    // file.close();
+    for (f i : g)
+    {
+        i.print();
+    }
 }

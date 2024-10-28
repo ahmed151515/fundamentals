@@ -63,9 +63,8 @@ int binary_search_while(int arr[], int size, int targt)
 int main()
 {
 
-
-    const int size = 100000;
-    int a[size];
+    const long long int size = 10000000000;
+    int *a = new int[size];
     for (int i = 0; i < size; i++)
     {
         if (i == 100)
@@ -75,15 +74,16 @@ int main()
         a[i] = i;
     }
     time_t s = time(NULL);
-    cout << linear_search(a, size, 101) << "\n";
+    cout << linear_search(a, size, size - 1) << "\n";
     time_t e = time(NULL);
+    
     cout << "time is " << (e - s) << "\n";
+    // s = time(NULL);
+    // cout << binary_search(a, size, size - 1) << "\n";
+    // e = time(NULL);
+    // cout << "time is " << (e - s) << "\n";
     s = time(NULL);
-    cout << binary_search(a, size, 101) << "\n";
-    e = time(NULL);
-    cout << "time is " << (e - s) << "\n";
-    s = time(NULL);
-    cout << binary_search_while(a, size, 888880) << "\n";
+    cout << binary_search_while(a, size, size - 1) << "\n";
     e = time(NULL);
     cout << "time is " << (e - s) << "\n";
     return 0;
