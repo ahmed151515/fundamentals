@@ -1,0 +1,2 @@
+INSERT INTO Departments VALUES ('DEPT IT', 100, 112233, '1-11-2006')
+

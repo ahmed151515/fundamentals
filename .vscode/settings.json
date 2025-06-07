@@ -72,5 +72,6 @@
 	"screencastMode.fontSize": 100,
 	"maven.terminal.useJavaHome": true,
 	"java.debug.settings.onBuildFailureProceed": true,
-	"liveServer.settings.port": 5501
+	"liveServer.settings.port": 5501,
+	"python.analysis.autoImportCompletions": true
 }
